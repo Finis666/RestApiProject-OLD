@@ -1,0 +1,60 @@
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+    "name": "welcome",
+    "email": "welcome@gmail.com",
+    "password": "123456",
+    "biz": true
+}
+
+### login user
+POST http://localhost:3000/api/auth
+Content-Type: application/json
+
+{
+    "email": "welcome@gmail.com",
+    "password": "123456"
+}
+
+### me
+GET http://localhost:3000/api/users/me
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNjZDQ5MTM5MDBkZjg3MjMyNmQ0YzkiLCJiaXoiOnRydWUsImlhdCI6MTY0MDgxNDA2OH0.P7rzsT-1zrkZo7J1ThVb-B6DC9QBCj-AqfKCV_pafLo
+
+### create card
+POST http://localhost:3000/api/cards
+Content-Type: application/json
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNjZDQ5MTM5MDBkZjg3MjMyNmQ0YzkiLCJiaXoiOnRydWUsImlhdCI6MTY0MDgxNDA2OH0.P7rzsT-1zrkZo7J1ThVb-B6DC9QBCj-AqfKCV_pafLo
+
+{
+    "bizName": "Test",
+    "bizDescription": "welcome to test ",
+    "bizAddress": "lemon av.",
+    "bizPhone": "0754213580"
+}
+
+###get by id
+GET http://localhost:3000/api/cards/61ccd4b03900df872326d4cd
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNjZDQ5MTM5MDBkZjg3MjMyNmQ0YzkiLCJiaXoiOnRydWUsImlhdCI6MTY0MDgxNDA2OH0.P7rzsT-1zrkZo7J1ThVb-B6DC9QBCj-AqfKCV_pafLo
+
+### Update card
+PUT http://localhost:3000/api/cards/61ccd4b03900df872326d4cd
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNjZDQ5MTM5MDBkZjg3MjMyNmQ0YzkiLCJiaXoiOnRydWUsImlhdCI6MTY0MDgxNDA2OH0.P7rzsT-1zrkZo7J1ThVb-B6DC9QBCj-AqfKCV_pafLo
+Content-Type: application/json
+
+{
+    "bizName": "My Lemonade",
+    "bizDescription": "lemonade lemondas",
+    "bizAddress": "lemon av.",
+    "bizPhone": "0754213580"
+}
+
+### delete card
+DELETE http://localhost:3000/api/cards/61ccd4b03900df872326d4cd
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNjZDQ5MTM5MDBkZjg3MjMyNmQ0YzkiLCJiaXoiOnRydWUsImlhdCI6MTY0MDgxNDA2OH0.P7rzsT-1zrkZo7J1ThVb-B6DC9QBCj-AqfKCV_pafLo
+
+
+### Get all users cards
+GET http://localhost:3000/api/cards/getUserCards/61ccd4913900df872326d4c9
+x-auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNjZDQ5MTM5MDBkZjg3MjMyNmQ0YzkiLCJiaXoiOnRydWUsImlhdCI6MTY0MDgxNDA2OH0.P7rzsT-1zrkZo7J1ThVb-B6DC9QBCj-AqfKCV_pafLo
+Content-Type: application/json
