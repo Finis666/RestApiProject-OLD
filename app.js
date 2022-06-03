@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 require("./model/user");
-mongoose.connect("mongodb://localhost/HackerYouProject")
+mongoose.connect("mongoLink")
     .then(() =>{
         console.log("Connected to MongoDB")
     }).catch(()=>{
